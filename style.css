@@ -48,10 +48,7 @@ select {
   padding: 0;
   margin: 0;
 }
-html,
-body {
-  height: 100%;
-}
+
 html {
   scroll-behavior: smooth;
   font-size: 100%; /* для масштабируемости */
@@ -64,6 +61,13 @@ body {
   color: #9697a1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .container {
