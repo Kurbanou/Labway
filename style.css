@@ -1,0 +1,372 @@
+/* Box sizing и базовые отступы */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Удаление списочных маркеров и стандартных стилей */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Удаление стандартных стилей ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Удаление border у изображений и нормализация */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+/* Удаление стандартных outline и фокуса */
+:focus {
+  outline: none;
+}
+
+/* Нормализация форм */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 100%; /* для масштабируемости */
+}
+body {
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  color: #9697a1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1360px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hide {
+  font-size: 0;
+  margin: 0;
+  line-height: 0;
+}
+.text-white-shadow {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+/* HEADER */
+
+header {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  z-index: 2;
+  animation: slideUP 0.4s ease-out forwards;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.desc {
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+nav[role="navigation"] {
+  position: relative;
+}
+
+.main_nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.main_nav a {
+  color: #006272;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.main_nav a:hover {
+  opacity: 0.8;
+}
+
+.scroll-up header {
+  position: fixed;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 30px 10px rgba(0, 0, 0, 0.4);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+/* ====== Бургер ====== */
+.burger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #006272;
+  border-radius: 100px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.burger span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3s ease;
+}
+
+.burger span::before,
+.burger span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 14px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.burger span::before {
+  top: -6px;
+}
+
+.burger span::after {
+  top: 6px;
+}
+
+/* ====== Анимация активного состояния ====== */
+.burger.active span {
+  background-color: transparent;
+}
+
+.burger.active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.burger.active span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/*MAIN*/
+/* about */
+.about {
+  padding: 100px 0;
+  color: white;
+  background-image: linear-gradient(
+      40deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.2) 70%,
+      rgba(255, 255, 255, 1) 95%,
+      rgba(255, 255, 255, 1) 100%
+    ),
+    url(./assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.about_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about_content_item {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.about_content_item .icon img {
+  width: 350px;
+  animation: infiniteRotateY 3s ease-in-out infinite;
+}
+
+.about_content_item p {
+  font-size: 32px;
+  position: relative;
+}
+
+.about_content_item p:last-child {
+  margin-bottom: 15px;
+}
+
+.about_content_item p::before {
+  content: "";
+  height: 2px;
+  width: 25%;
+  left: 0;
+  bottom: -15px;
+  position: absolute;
+  background-color: white;
+}
+
+/* ====== Адаптив ====== */
+@media (max-width: 900px) {
+  .about {
+    padding: 80px 0;
+  }
+  .about_content_item p {
+    font-size: 24px;
+  }
+  .about_content_item .icon {
+    display: none;
+  }
+  .header_content {
+    align-items: flex-start;
+  }
+  .main_nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 100px;
+    display: flex;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    transform: translateX(100%);
+    transition: all 0.3s linear;
+    opacity: 0;
+  }
+
+  .main_nav.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 498px) {
+  .about_content_item {
+    justify-content: center;
+    align-items: center;
+  }
+  .about_content_item p {
+    font-size: 18px;
+    text-align: center;
+  }
+  .about_content_item p::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUP {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes infiniteRotateY {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotateY(360deg);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}
