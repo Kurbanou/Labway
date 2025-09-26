@@ -26,19 +26,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  let lastScrollTop = 0;
-  const body = document.body;
+// document.addEventListener("DOMContentLoaded", () => {
+//   let lastScrollTop = 0;
+//   const body = document.body;
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   window.addEventListener("scroll", () => {
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop < lastScrollTop && scrollTop > 110) {
-      body.classList.add("scroll-up");
-    } else {
-      body.classList.remove("scroll-up");
-    }
+//     if (scrollTop < lastScrollTop && scrollTop > 110) {
+//       body.classList.add("scroll-up");
+//     } else {
+//       body.classList.remove("scroll-up");
+//     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
-});
+//     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+//   });
+// });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const cards = document.querySelectorAll(".service-card");
+
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//       entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//           entry.target.classList.add("visible");
+//           observer.unobserve(entry.target); // отключаем после появления
+//         }
+//       });
+//     },
+//     {
+//       threshold: 1, // можно настроить чувствительность
+//     }
+//   );
+
+//   cards.forEach((card) => observer.observe(card));
+// });
