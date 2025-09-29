@@ -21,6 +21,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   </head>
   <body>
     <header>
@@ -32,14 +33,20 @@
             </div>
             <div class="desc">Официальный дистрибьютор <br />WERFEN</div>
           </div>
+
           <nav role="navigation" aria-label="Главное меню">
             <ul class="main_nav">
-              <li><a href="#about">о Labway</a></li>
+              <li><a class="active" href="#about">о Labway</a></li>
               <li><a href="#directions">направления</a></li>
               <li><a href="#services">сервисы</a></li>
               <li><a href="#contacts">контакты</a></li>
             </ul>
+            <div class="search">
+              <img src="./assets/img/svg/search.svg" alt="" />
+              <input name="search" id="search" type="search" />
+            </div>
           </nav>
+
           <div class="burger"><span></span></div>
         </div>
       </div>
@@ -212,7 +219,7 @@
 
             <div class="service-card">
               <img src="./assets/img/fon7.png" alt="" aria-hidden="true" />
-              <h3>Рекламционная поддержка</h3>
+              <h3>Рекламационная поддержка</h3>
               <p>Поддержка от производителя для продвижения продукции.</p>
             </div>
           </div>
