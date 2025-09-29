@@ -87,7 +87,6 @@ main {
   padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
 }
 .hide {
   font-size: 0;
@@ -166,9 +165,9 @@ nav[role="navigation"] {
 .scroll-up header {
   position: fixed;
   transition: all 0.3s ease;
-  box-shadow: 0px 4px 30px 10px rgba(0, 0, 0, 0.4);
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
   animation: slideDown 0.4s ease-out forwards;
 }
 
@@ -237,7 +236,6 @@ nav[role="navigation"] {
 /* about */
 section {
   padding: 100px 0;
-  overflow: hidden;
 }
 .about {
   color: white;
@@ -328,7 +326,7 @@ section {
 .card_img {
   display: block;
   width: 100%;
-  max-width: 300px;
+  max-width: 40%;
   order: 2;
 }
 
@@ -337,14 +335,20 @@ section {
   order: 3;
 }
 
-.title,
-h3 {
-  font-weight: 400;
-  font-size: 24px;
-  color: #006272;
+.title {
+  margin-bottom: 20px;
 }
 
-.text {
+.text,
+p {
+  font-weight: 400;
+}
+
+.title,
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #006272;
 }
 
 .card:nth-child(even) .card_img {
@@ -356,10 +360,6 @@ h3 {
   margin-left: auto;
   margin-bottom: 30px;
   margin-right: 20px;
-}
-
-.bad.services {
-  background-color: white;
 }
 
 .service-card {
@@ -380,78 +380,30 @@ h3 {
   background-color: #f0f8f8;
 }
 
-.bad .services {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  row-gap: 30px;
-  background-color: white;
-  align-items: center;
-  justify-content: center;
-}
-
 .service-card {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
-  text-align: center;
+  /* text-align: center; */
   box-shadow: 0 4px 12px rgba(0, 128, 128, 0.1);
   transition: transform 0.3s ease;
 }
 
-.bad .service-card {
-  background-color: #ffffff;
-  border-radius: 0px;
-  padding: 1.5rem;
-  text-align: left;
-  box-shadow: none;
-  transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 440px;
-  border-right: 4px solid #9697a1;
-  border-left: 4px solid #9697a1;
-  opacity: 1;
-}
-
-.bad .service-card:nth-child(1),
-.bad .service-card:nth-child(4) {
-  max-width: 880px;
-}
-.bad .service-card:nth-child(1),
-.bad .service-card:nth-child(5),
-.bad .service-card:nth-child(2) {
-  border-left: 0;
-}
-
-.bad .service-card:nth-child(2),
-.bad .service-card:nth-child(3),
-.bad .service-card:nth-child(5),
-.bad .service-card:nth-child(7),
-.bad .service-card:nth-child(6) {
-  border-right: 0;
-}
-
 .service-card:hover {
-  /* transform: translateY(-5px); */
+  transform: translateY(-5px);
 }
 
 .service-card img {
   width: 48px;
   height: 48px;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+  margin-bottom: 25px;
+  margin-left: 10px;
 
-.bad .service-card img {
   float: right;
-  width: 100px;
-  height: 100px;
 }
 
 .service-card h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 25px;
   line-height: 1;
 }
 
@@ -473,7 +425,7 @@ footer {
 .contacts h3 {
   color: white;
   margin-bottom: 30px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .contact-form {
@@ -484,9 +436,6 @@ footer {
   max-width: 600px;
   margin: 0 auto;
   border-radius: 8px;
-}
-.bad .contact-form {
-  max-width: 100%;
 }
 
 .form-group {
@@ -506,16 +455,6 @@ footer {
   border: 1px solid var(--color-input-border);
   border-radius: 4px;
   background-color: var(--color-input-bg);
-  font-size: 1rem;
-  color: #333;
-}
-.bad .form-group input,
-.bad .form-group textarea {
-  padding: 0.75rem;
-  border: 0;
-  border-bottom: 1px solid white;
-  border-radius: 0px;
-  background-color: transparent;
   font-size: 1rem;
   color: #333;
 }
@@ -563,38 +502,13 @@ footer {
   display: block;
 }
 
-.bad .submit-button {
-  width: 100%;
-  max-width: 350px;
-  display: block;
-  border-radius: 50px;
-  font-size: 24px;
-  background: linear-gradient(180deg, #ffffff, #cccccc);
-}
-
 .submit-button:hover {
   background-color: var(--color-button-hover);
 }
 
 /* Адаптация под мобильные */
 
-@media (max-width: 1300px) {
-  .bad .service-card {
-    border: 0;
-    max-width: 880px;
-  }
-}
 @media (max-width: 480px) {
-  .bad .service-card img {
-    float: none;
-  }
-  .contact-form {
-    padding: 1rem;
-  }
-  .bad .submit-button {
-    font-size: 16px;
-    width: 100%;
-  }
   .submit-button {
     width: 100%;
   }
@@ -602,6 +516,10 @@ footer {
 
 /* ====== Адаптив ====== */
 @media (max-width: 900px) {
+  .title,
+  h3 {
+    font-weight: 400;
+  }
   .section {
     padding: 80px 0;
   }
@@ -705,7 +623,9 @@ footer {
 
 /* Скрываем стандартный чекбокс */
 #consent {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Стили для контейнера чекбокса */
