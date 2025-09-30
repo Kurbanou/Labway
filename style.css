@@ -147,7 +147,7 @@ nav {
   width: 20px;
 }
 input[type="search"] {
-  border: 2px solid #9697a1;
+  border: 1px solid #9697a1;
   border-radius: 8px;
   height: 28px;
   width: 210px;
@@ -741,6 +741,11 @@ footer {
 }
 
 @media (max-width: 900px) {
+  .about_content_item .icon img {
+    margin-top: 80px;
+    width: 450px;
+    animation: none;
+  }
   .section,
   .about {
     padding: 80px 0;
