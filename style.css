@@ -313,7 +313,7 @@ section {
 .about_content_item .icon img {
   margin-top: 80px;
   width: 450px;
-  animation: infiniteRotateY 3s ease-in-out infinite;
+  /* animation: infiniteRotateY 3s ease-in-out infinite; */
 }
 
 .about_content_item li {
