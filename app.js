@@ -62,3 +62,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //   cards.forEach((card) => observer.observe(card));
 // });
+
+document
+  .querySelector(".contact-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then((response) => response.text())
+      .then((text) => {
+        if (text.includes("Спасибо")) {
+          showPopup();
+          form.reset();
+        } else {
+          alert("Ошибка: " + text);
+        }
+      })
+      .catch((error) => {
+        alert("Ошибка отправки: " + error);
+      });
+  });
+
+function showPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
