@@ -28,17 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->CharSet = 'UTF-8';
         $mail->Subject = 'Новое сообщение с сайта';
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';         // Заменить на ваш SMTP-сервер
+        $mail->Host       = 'smtp.mail.ru';         // Заменить на ваш SMTP-сервер
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'kurbanou.faridun@gmail.com';         // Ваш email
-        $mail->Password   = 'tdpt fzdy jsop uelg';      // Пароль приложения
-        $mail->SMTPSecure = 'tls';                    // 'tls' или 'ssl'
-        $mail->Port       = 587;                      // 465 для SSL, 587 для TLS
+        $mail->Username   = 'wsite@labway.pro';         // Ваш email
+        $mail->Password   = 'MmyhTaF2SR8ldv69X79B';      // Пароль приложения
+        $mail->SMTPSecure = 'ssl';                    // 'tls' или 'ssl'
+        $mail->Port       = 465;                      // 465 для SSL, 587 для TLS
 
         // От кого и кому
-        $mail->setFrom('kurbanou.faridun@gmail.com', 'Сайт');       // Отправитель
+        $mail->setFrom('wsite@labway.pro', 'Сайт');       // Отправитель
         $mail->addAddress('Orders@labway.pro');           // заказчик
-        $mail->addAddress('kurbanou.faridun@gmail.com');  // копия для контроля
+        // $mail->addAddress('kurbanou.faridun@gmail.com');  // копия для контроля
 
         // HTML-содержание письма
         $mail->isHTML(true);
