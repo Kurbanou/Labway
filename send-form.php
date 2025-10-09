@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Host       = 'smtp.mail.ru';         // Заменить на ваш SMTP-сервер
         $mail->SMTPAuth   = true;
         $mail->Username   = 'wsite@labway.pro';         // Ваш email
-        $mail->Password   = 'MmyhTaF2SR8ldv69X79B';      // Пароль приложения
+        $mail->Password   = '******************';      // Пароль приложения
         $mail->SMTPSecure = 'ssl';                    // 'tls' или 'ssl'
         $mail->Port       = 465;                      // 465 для SSL, 587 для TLS
 
